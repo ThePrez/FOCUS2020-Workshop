@@ -3,6 +3,7 @@
 import ibm_db_dbi as db2
 import re
 from ibm_db import SQL_ATTR_TXN_ISOLATION, SQL_TXN_NO_COMMIT
+import os
 
 import sys
 
@@ -10,16 +11,17 @@ def print_and_exec(cur, sql):
     print(sql, "\n\n\n")
     cur.execute(sql)
 
-if len(sys.argv) < 2: 
-    print('ERROR: User not specified')
-    exit(-1)
-
-user = sys.argv[1]
-
-if re.match("^emlab[a-zA-Z0-9]{1,5}$", user):
-    print("Setting up database for user: %s" % user)
+if len(sys.argv) < 2:
+    dbname = os.environ.get("LABDB")
+    if dbname is None:
+        dbname = ""
 else:
-    print("Invalid user: %s" % user)
+    dbname = sys.argv[1]
+
+if re.match("^emlab[a-zA-Z0-9]{1,5}$", dbname):
+    print("Setting up database trigger for database: %s" % dbname)
+else:
+    print("Invalid database or unspecified: %s" % dbname)
     exit(-1)
 
 conn = db2.connect()
@@ -29,11 +31,11 @@ print("Successfully connected\n\n")
 
 
 try:
-    cur.execute("drop SCHEMA %s cascade" % user)
+    cur.execute("drop SCHEMA %s cascade" % dbname)
 except Exception as e:
     print("error: ", e)
 try: 
-    print_and_exec(cur, "CREATE SCHEMA %s" % user)
+    print_and_exec(cur, "CREATE SCHEMA %s" % dbname)
     print_and_exec(cur, """CREATE OR REPLACE TABLE %s.CUSTOMERS (
     CUSTOMER_ID FOR COLUMN CUSTID INTEGER GENERATED ALWAYS AS IDENTITY (
     START WITH 1 INCREMENT BY 1
@@ -60,10 +62,10 @@ try:
     CONSTRAINT %s.CUSTOMER_ID_PK PRIMARY KEY( CUSTOMER_ID ),
     CONSTRAINT %s.CUSTOMER_LOGIN_ID_UK
     UNIQUE( CUSTOMER_LOGIN_ID ) ) ON REPLACE PRESERVE ROWS;
-    truncate %s.CUSTOMERS ;""" % (user, user, user, user))
+    truncate %s.CUSTOMERS ;""" % (dbname, dbname, dbname, dbname))
 
-    print_and_exec(cur, """call qsys2.qcmdexc('GRTOBJAUT OBJ(%s) OBJTYPE(*LIB) USER(*PUBLIC) AUT(*ALL)')""" % user)
-    print_and_exec(cur, """call qsys2.qcmdexc('CRTDTAQ DTAQ(%s/HANDOFF_DQ) MAXLEN(64000) SENDERID(*YES) SIZE(*MAX2GB) TEXT(''row level changes for user %s'')')""" % (user, user))
+    print_and_exec(cur, """call qsys2.qcmdexc('GRTOBJAUT OBJ(%s) OBJTYPE(*LIB) USER(*PUBLIC) AUT(*ALL)')""" % dbname)
+    print_and_exec(cur, """call qsys2.qcmdexc('CRTDTAQ DTAQ(%s/HANDOFF_DQ) MAXLEN(64000) SENDERID(*YES) SIZE(*MAX2GB) TEXT(''row level changes for dbname %s'')')""" % (dbname, dbname))
 
 finally:
     cur.close()

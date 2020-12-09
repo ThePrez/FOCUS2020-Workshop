@@ -3,6 +3,7 @@
 import ibm_db_dbi as db2
 import re
 from ibm_db import SQL_ATTR_TXN_ISOLATION, SQL_TXN_NO_COMMIT
+import os
 
 import sys
 
@@ -10,16 +11,17 @@ def print_and_exec(cur, sql):
     print(sql, "\n\n\n")
     cur.execute(sql)
 
-if len(sys.argv) < 2: 
-    print('ERROR: User not specified')
-    exit(-1)
-
-user = sys.argv[1]
-
-if re.match("^emlab[a-zA-Z0-9]{1,5}$", user):
-    print("Setting up database trigger for user: %s" % user)
+if len(sys.argv) < 2:
+    dbname = os.environ.get("LABDB")
+    if dbname is None:
+        dbname = ""
 else:
-    print("Invalid user: %s" % user)
+    dbname = sys.argv[1]
+
+if re.match("^emlab[a-zA-Z0-9]{1,5}$", dbname):
+    print("Setting up database trigger for database: %s" % dbname)
+else:
+    print("Invalid database or unspecified: %s" % dbname)
     exit(-1)
 
 conn = db2.connect()
@@ -29,7 +31,7 @@ print("Successfully connected\n\n")
 
 
 try: 
-    print_and_exec(cur, """create or replace variable %s.dq_json clob(64000) ccsid 1208""" % (user))
+    print_and_exec(cur, """create or replace variable %s.dq_json clob(64000) ccsid 1208""" % (dbname))
 
     print_and_exec(cur, """create or replace trigger %s.customers_trigger
     after update or insert or delete on %s.customers
@@ -88,7 +90,7 @@ try:
         message_data       => %s.dq_json, 
         data_queue         => 'HANDOFF_DQ',
         data_queue_library => '%s');
-  end;""" % (user, user, user, user, user, user.upper()))
+  end;""" % (dbname, dbname, dbname, dbname, dbname, dbname.upper()))
   
 finally:
     cur.close()
