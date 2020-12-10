@@ -61,21 +61,12 @@ prompted for these values. On IBM i, this may require an SSH terminal. Note that
 
 #### 6. Build and launch
 ```
-mvn install
-mvn exec:java
+mvn compile && mvn exec:java
 ```
 The program will continue running until canceled.
-Test by sending a message to the queue!
+Test by placing items on the data queue. This is done by triggering database activity 
+(return to workshop steps)
 
-Since the `config.properties` file contains passwords, you may want to stash a copy
-in a secure location. If you want to do this, just set the `camelconfig` Java System
-property to the path of the file. For example:
-```
-mvn install
-mvn exec:java -Dcamelconfig=/home/MYUSER/.private/config.properties
-```
-Or, for interactive use, simply remove the properties from the `config.properties`
-file and let the program prompt you.
 
 ## Understanding the code and learning more
 
