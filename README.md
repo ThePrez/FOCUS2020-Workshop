@@ -32,5 +32,5 @@ export LABDB=emlab0
 ```
 
 #### 5. Build and deploy your camel route
-Refer to [these steps](camel/README) (open in a new browser tab) to build and deploy your camel route. 
+Refer to [these steps](camel/) (open in a new browser tab) to build and deploy your camel route. 
 **When complete, return here for step 6**
