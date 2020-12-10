@@ -28,7 +28,7 @@ public class MainApp {
             public void configure() {
                 from(dtaqUri)
 		.convertBodyTo(String.class)
-                .wireTap("stream:out") // this is just for debugging data flowing through the route
+                .wireTap("log:msgq_to_email?showAll=true&level=INFO") // this is just for debugging data flowing through the route
                 .to(kafkaUri); 
             }
         });
