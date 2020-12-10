@@ -27,6 +27,7 @@ public class MainApp {
             @Override
             public void configure() {
                 from(dtaqUri)
+		.convertBodyTo(String.class)
                 .to("stream:out", // This is just for debugging data flowing through the route
                 kafkaUri); 
             }
