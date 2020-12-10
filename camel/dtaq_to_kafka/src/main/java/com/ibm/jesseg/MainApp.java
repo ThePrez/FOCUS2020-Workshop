@@ -28,8 +28,8 @@ public class MainApp {
             public void configure() {
                 from(dtaqUri)
 		.convertBodyTo(String.class)
-                .to("stream:out", // This is just for debugging data flowing through the route
-                kafkaUri); 
+                .wireTap("stream:out") // this is just for debugging data flowing through the route
+                .to(kafkaUri); 
             }
         });
 
