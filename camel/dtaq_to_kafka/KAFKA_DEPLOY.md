@@ -32,7 +32,7 @@ cd /home/myusr/mydir
 wget https://apache.osuosl.org/kafka/2.6.0/kafka_2.13-2.6.0.tgz
 ```
 
-#### 4. Install maven
+#### 4. extract Kafka
 ```
 tar xzvf kafka_2.13-2.6.0.tgz
 ```
