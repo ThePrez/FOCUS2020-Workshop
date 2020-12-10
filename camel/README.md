@@ -16,7 +16,10 @@ This README documents how to run this example on IBM i, but it can be run from a
 
 ## How to install prerequisites, configure, and run this example on IBM i
 
-This example requires you to have a Kafka bootstrap server available. If
+#### 0. Ensure you have a Kafka bootstrap server running
+This example requires you to have a Kafka bootstrap server available. If you are 
+participating interactively as part of the COMMON Focus 2020 event, the instructors
+will have already started one for you. Otherwise, If
 you would like to deploy Kafka on your IBM i system, see [this documentation](dtaq_to_kafka/KAFKA_DEPLOY.md)
 for guidance, but of course you may deploy your bootstrap server wherever it makes the
 most sense. Some deploy on a local laptop for bringup/testing. 
@@ -52,8 +55,10 @@ Use editor of choice, for instance nano:
 yum install nano
 nano src/main/resources/config.properties
 ```
-These values are relatively self-explanatory. For the email example, the `smtp.username` and
-`smtp.password` lines can be deleted if your SMTP server doesn't require them.
+You will need to change the following properties:
+- `jt400.dtaq_library` - set to your schema name assigned to you for the workshop
+- `jt400.username` and `jt400.password` - assigned to you by your workshop coordinator
+- `kafka.topic` - set to your user name
 
 You can also opt to remove any properties from this file, and you will be interactively
 prompted for these values. On IBM i, this may require an SSH terminal. Note that the
