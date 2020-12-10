@@ -19,7 +19,7 @@ these appropriately for a production deployment as needed.
 
 #### 1. Download requisite software
 ```
-yum install wget ca-certificates-mozilla gzip tar-gnu openjdk-11 coreutils-gnu
+yum install wget ca-certificates-mozilla gzip tar-gnu openjdk-11 coreutils-gnu sed-gnu
 ```
 
 #### 2. Change to your installation directory
