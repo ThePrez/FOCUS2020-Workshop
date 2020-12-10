@@ -33,4 +33,11 @@ export LABDB=emlab0
 
 #### 5. Build and deploy your camel route
 Refer to [these steps](camel/) (open in a new browser tab) to build and deploy your camel route. 
-**When complete, return here for step 6**
+**When complete, return here for next steps when your Camel route us running**
+
+#### 6. Trigger database activity!!
+```
+./delete_customers.py
+./add_customers.py
+./update_customers.py
+```

@@ -1,16 +1,6 @@
-# Camel Examples
+# Camel Example
 
-These examples build simple Apache Camel routes from IBM i to other technologies. 
-
-So far, these examples are included:
-- msgq_to_email: A route from a message queue to email. That is, any messages sent 
-to the given queue will be sent in the body of an email.
-- dtaq_to_kafka: A route from a data queue to Apache Kafka. Any entry placed on the
-data queue will be sent to a Kafka bootstrap server. For an example of how this might
-be leveraged with database capabilities, please see
-[dtaq_to_kafka/banking_kafka_example.sql](dtaq_to_kafka/banking_kafka_example.sql),
-which demonstrates how a bank might use this technology to publish changes to
-a customer database to a Kafka topic.
+These examples builds a simple Apache Camel route from IBM i to Apache Kafka.
 
 These examples use the following [Apache Camel](https://camel.apache.org/) components:
 - [JT400](https://camel.apache.org/components/latest/jt400-component.html)
@@ -26,12 +16,7 @@ This README documents how to run this example on IBM i, but it can be run from a
 
 ## How to install prerequisites, configure, and run this example on IBM i
 
-Naturally, the email example requires an SMTP server for sending email. Be sure to have one handy.
-Your organization probably already has an SMTP server, and there are several
-free (or trial) services available online, including Gmail, or MailJet. You can also run
-your own free mail server, like hMailServer.
-
-Similarly, the Kafka example requires you to have a Kafka bootstrap server available. If
+This example requires you to have a Kafka bootstrap server available. If
 you would like to deploy Kafka on your IBM i system, see [this documentation](dtaq_to_kafka/KAFKA_DEPLOY.md)
 for guidance, but of course you may deploy your bootstrap server wherever it makes the
 most sense. Some deploy on a local laptop for bringup/testing. 
@@ -76,21 +61,12 @@ prompted for these values. On IBM i, this may require an SSH terminal. Note that
 
 #### 6. Build and launch
 ```
-mvn install
-mvn exec:java
+mvn compile && mvn exec:java
 ```
 The program will continue running until canceled.
-Test by sending a message to the queue!
+Test by placing items on the data queue. This is done by triggering database activity 
+(return to workshop steps)
 
-Since the `config.properties` file contains passwords, you may want to stash a copy
-in a secure location. If you want to do this, just set the `camelconfig` Java System
-property to the path of the file. For example:
-```
-mvn install
-mvn exec:java -Dcamelconfig=/home/MYUSER/.private/config.properties
-```
-Or, for interactive use, simply remove the properties from the `config.properties`
-file and let the program prompt you.
 
 ## Understanding the code and learning more
 

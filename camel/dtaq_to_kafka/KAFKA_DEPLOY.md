@@ -19,7 +19,7 @@ these appropriately for a production deployment as needed.
 
 #### 1. Download requisite software
 ```
-yum install wget ca-certificates-mozilla gzip tar-gnu openjdk-11 coreutils-gnu
+yum install wget ca-certificates-mozilla gzip tar-gnu openjdk-11 coreutils-gnu sed-gnu
 ```
 
 #### 2. Change to your installation directory
@@ -32,7 +32,7 @@ cd /home/myusr/mydir
 wget https://apache.osuosl.org/kafka/2.6.0/kafka_2.13-2.6.0.tgz
 ```
 
-#### 4. Install maven
+#### 4. extract Kafka
 ```
 tar xzvf kafka_2.13-2.6.0.tgz
 ```
@@ -56,8 +56,12 @@ cd kafka_2.13-2.6.0/config
 cd /home/myusr/mydir
 ```
 
-#### 8. Start a Kafka server
+#### 8. Set up environment to use OpenJDK and start a Kafka server
 ```
+JAVA_HOME=/QOpenSys/pkgs/lib/jvm/openjdk-11
+export JAVA_HOME
+PATH=$JAVA_HOME/bin:$PATH
+export PATH
 cd kafka_2.13-2.6.0/config
 ../bin/kafka-server-start.sh server.properties
 ```

@@ -27,8 +27,8 @@ public class MainApp {
             @Override
             public void configure() {
                 from(dtaqUri)
-                .wireTap("log:msgq_to_email?showAll=true&level=INFO") // This is just for debugging data flowing through the route
-                .to(kafkaUri); 
+                .to("stream:out", // This is just for debugging data flowing through the route
+                kafkaUri); 
             }
         });
 
