@@ -58,10 +58,15 @@ yum install maven
 #### 4. Change to the appropriate directory
 For instance, if you're starting inside the `ibmi-oss-examples` directory where you cloned this repository:
 ```
-cd camel/msgq_to_email
+cd camel/dtaq_to_kafka
 ```
 
 #### 5. Edit the file `src/main/resources/config.properties` with appropriate values
+Use editor of choice, for instance nano:
+```
+yum install nano
+nano src/main/resources/config.properties
+```
 These values are relatively self-explanatory. For the email example, the `smtp.username` and
 `smtp.password` lines can be deleted if your SMTP server doesn't require them.
 
