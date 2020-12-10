@@ -56,8 +56,12 @@ cd kafka_2.13-2.6.0/config
 cd /home/myusr/mydir
 ```
 
-#### 8. Start a Kafka server
+#### 8. Set up environment to use OpenJDK and start a Kafka server
 ```
+JAVA_HOME=/QOpenSys/pkgs/lib/jvm/openjdk-11
+export JAVA_HOME
+PATH=$JAVA_HOME/bin:$PATH
+export PATH
 cd kafka_2.13-2.6.0/config
 ../bin/kafka-server-start.sh server.properties
 ```
