@@ -20,7 +20,7 @@ This README documents how to run this example on IBM i, but it can be run from a
 This example requires you to have a Kafka bootstrap server available. If you are 
 participating interactively as part of the COMMON Focus 2020 event, the instructors
 will have already started one for you. Otherwise, If
-you would like to deploy Kafka on your IBM i system, see [this documentation](dtaq_to_kafka/KAFKA_DEPLOY.md)
+you would like to deploy Kafka on your IBM i system, see [this documentation](../EXERCISE_1.md)
 for guidance, but of course you may deploy your bootstrap server wherever it makes the
 most sense. Some deploy on a local laptop for bringup/testing. 
 
