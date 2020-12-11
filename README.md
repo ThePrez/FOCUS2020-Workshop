@@ -12,4 +12,4 @@ These steps assume you have an environment set up where you:
 Workshop exercises:
 - [Exercise 1: Deploy Kafka](EXERCISE_1)
 - [Exercise 2: Create a Db2 Kafka data Pipeline](EXERCISE_2)
-- [Exercise 3: Write your own Camel Routes](EXERCISE_3)
+- [Exercise 3: (Test)Write your own Camel Routes](EXERCISE_3)
