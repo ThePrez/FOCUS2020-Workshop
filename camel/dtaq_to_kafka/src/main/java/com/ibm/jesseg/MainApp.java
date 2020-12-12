@@ -30,7 +30,7 @@ public class MainApp {
             @Override
             public void configure() {
                 from(dtaqUri)
-                .convertBodyTo(byte[].class, "UTF-8"); // We do this to convert the bytes from the data queue (UTF-8 JSON data) into a String object in the message
+                .convertBodyTo(byte[].class, "UTF-8") // We do this to convert the bytes from the data queue (UTF-8 JSON data) into a String object in the message
                 .wireTap("log:msgq_to_email?showAll=true&level=INFO") // this is just for debugging data flowing through the route
                 .to(kafkaUri); 
             }
