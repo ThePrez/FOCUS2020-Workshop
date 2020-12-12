@@ -17,7 +17,7 @@ PATH=/QOpenSys/pkgs/lib/jvm/openjdk-11/bin:$PATH
 export PATH
 ```
 
-#### 2. Set the `JAVA_HOME` environment variable to the JRE of your choosing
+#### 2. Set the `JAVA_HOME` environment variable to OpenJDK
 If using OpenJDK:
 ```
 JAVA_HOME=/QOpenSys/pkgs/lib/jvm/openjdk-11
