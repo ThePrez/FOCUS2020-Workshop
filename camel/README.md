@@ -1,18 +1,4 @@
-# Camel Example
-
-These examples builds a simple Apache Camel route from IBM i to Apache Kafka.
-
-These examples use the following [Apache Camel](https://camel.apache.org/) components:
-- [JT400](https://camel.apache.org/components/latest/jt400-component.html)
-- [Mail](https://camel.apache.org/components/latest/mail-component.html)
-- [Kafka](https://camel.apache.org/components/latest/kafka-component.html)
-
-While these examples use the POJO ("plain old Java object") deployment technique. Apache Camel
-can be deployed in a number of ways. Please visit the [Apache Camel home page](https://camel.apache.org/)
-to learn more about this technology.
-
-This README documents how to run this example on IBM i, but it can be run from any platform
-(assuming Java and maven knowledge).
+# Db2 to Kafka Pipeline Exercise
 
 ## How to install prerequisites, configure, and run this example on IBM i
 
@@ -44,7 +30,7 @@ yum install maven
 ```
 
 #### 4. Change to the appropriate directory
-For instance, if you're starting inside the `ibmi-oss-examples` directory where you cloned this repository:
+For instance, if you're starting inside the `FOCUS2020-Workshop` directory where you cloned this repository:
 ```
 cd camel/dtaq_to_kafka
 ```
