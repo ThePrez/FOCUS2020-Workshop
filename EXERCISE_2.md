@@ -47,3 +47,7 @@ These scripts can be run multiple times to see your pipeline working.
 - `add customers` adds a few customers
 - `update_customers` performs some simple update operations
 Each of these, when run in this order, should result in JSON data flowing through the data pipeline to Kafka.
+
+**If all goes well, you should be seeing your transactions flowing in your Camel application and all the way through
+to the Kafka visualization tool in use!! If you are not seeing this happening, something is wrong. Please consult
+your instructor for debug/guidance**
