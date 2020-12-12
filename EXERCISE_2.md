@@ -19,6 +19,7 @@ Your instructor will give you a database schema name in the format `EMLAB____`. 
 ```
 export LABDB=emlab0
 ```
+This environment variable will be used by subsequent scripts to operate on your own dedicated schema for this workshop
 
 #### 3. Create test schema
 ```
@@ -29,6 +30,7 @@ export LABDB=emlab0
 ```
 ./create_trigger.py
 ```
+Note that the script will show you the SQL used, for your educational purposes 
 
 #### 5. Build and deploy your camel route
 Refer to [these steps](camel/) (open in a new browser tab and perform steps in a new SSH session) to build and deploy your camel route. 
@@ -40,3 +42,8 @@ Refer to [these steps](camel/) (open in a new browser tab and perform steps in a
 ./add_customers.py
 ./update_customers.py
 ```
+These scripts can be run multiple times to see your pipeline working.
+- `delete_customers.py` deletes all customers from the database
+- `add customers` adds a few customers
+- `update_customers` performs some simple update operations
+Each of these, when run in this order, should result in JSON data flowing through the data pipeline to Kafka.
