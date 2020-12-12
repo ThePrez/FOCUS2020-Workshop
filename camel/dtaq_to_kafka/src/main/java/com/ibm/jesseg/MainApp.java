@@ -1,8 +1,11 @@
 package com.ibm.jesseg;
 
 import org.apache.camel.CamelContext;
+import org.apache.camel.Route;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.camel.Processor;
+import org.apache.camel.Exchange;
 
 /**
  * A Camel Application that routes messages from an IBM i data queue to a Kafka server.
@@ -27,7 +30,9 @@ public class MainApp {
             @Override
             public void configure() {
                 from(dtaqUri)
-		.convertBodyTo(String.class)
+                // here we implement a message translator with the Process interfaces as documented at https://camel.apache.org/components/latest/eips/process-eip.html
+                // We do this only to convert the bytes from the data queue (UTF-8 JSON data) into a String object in the message
+                .process((exchange) -> {exchange.getIn().setBody(new String(exchange.getIn().getBody(byte[].class), "UTF-8"));}) 
                 .wireTap("log:msgq_to_email?showAll=true&level=INFO") // this is just for debugging data flowing through the route
                 .to(kafkaUri); 
             }
