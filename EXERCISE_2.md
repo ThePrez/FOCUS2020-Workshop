@@ -7,6 +7,7 @@ These steps assume you have an environment set up where you:
 - Have open source set up (namely `yum` and RPM tools)
 - are using bash
 - have `PATH` set up appropriately for use of open source tools
+- have set the current working directory to the location where you have cloned this workshop (for instance, `cd FOCUS2020-Workshop`)
 
 
 #### 1. Install Python and database connector
