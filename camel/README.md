@@ -4,14 +4,14 @@
 #### 1. Install OpenJDK. 
 ```
 yum install openjdk-11
-PATH=/QOpenSys/pkgs/lib/jvm/openjdk-11/bin:$PATH
-export PATH
 ```
 
-#### 2. Set the `JAVA_HOME` environment variable to OpenJDK
+#### 2. Set the `JAVA_HOME` and `PATH` environment variables to OpenJDK
 ```
 JAVA_HOME=/QOpenSys/pkgs/lib/jvm/openjdk-11
 export JAVA_HOME
+PATH=/QOpenSys/pkgs/lib/jvm/openjdk-11/bin:$PATH
+export PATH
 ```
 
 #### 3. Install maven
