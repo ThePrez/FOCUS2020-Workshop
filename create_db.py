@@ -33,7 +33,8 @@ print("Successfully connected\n\n")
 try:
     cur.execute("drop SCHEMA %s cascade" % dbname)
 except Exception as e:
-    print("error: ", e)
+    if os.getenv("LABDEBUG") is not None:
+        print("error: ", e)
 try: 
     print_and_exec(cur, "CREATE SCHEMA %s" % dbname)
     print_and_exec(cur, """CREATE OR REPLACE TABLE %s.CUSTOMERS (
