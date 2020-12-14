@@ -12,9 +12,10 @@ def print_and_exec(cur, sql):
     cur.execute(sql)
 
 if len(sys.argv) < 2:
-    dbname = os.environ.get("LABDB")
+    # assume db name same as user
+    dbname = os.environ.get("LOGNAME")
     if dbname is None:
-        dbname = ""
+        dbname = os.environ.get("USER")
 else:
     dbname = sys.argv[1]
 
