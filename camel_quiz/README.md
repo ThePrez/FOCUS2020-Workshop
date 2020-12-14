@@ -44,11 +44,7 @@ The program will ask you for URIs, continue running until canceled with <ctrl>+C
 
 
 #### 5. Send yourself a message
-Open a new SSH terminal, and set the LABDB environent variable to the username assigned by your instructor, for instance
-```
-export LABDB=emlab0
-```
-Then, run the `send_message` script, with a message of your choice. Observe the message showing up in the Kafka visualizer!
+Open a new SSH terminal, and run the `send_message` script, with a message of your choice. Observe the message showing up in the Kafka visualizer!
 ```
 ./send_msg.py "Hello, World!"
 ```
