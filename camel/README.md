@@ -43,9 +43,7 @@ Note that `jt400.hostname` should be left as `localhost`
 ```
 mvn compile && mvn exec:java
 ```
-The program will continue running until canceled.
-Test by placing items on the data queue. This is done by triggering database activity 
-(return to workshop steps)
+The program will continue running until canceled. **Leave this program running until the exercise is completed** 
 
 You will know that the program is running and waiting for database activity by seeing output similar to the following:
 ```
@@ -54,6 +52,9 @@ You will know that the program is running and waiting for database activity by s
 [er-network-thread | producer-1] Metadata                       INFO  [Producer clientId=producer-1] Cluster ID: OOFZVCLZRpS7PY9CTBJcpQ
 ```
 
+#### 7. Return to workshop steps and triffer database activity
+
+Return to the previous steps for Exercise 2 to trigger database activity and test your pipeline!
 
 ## Understanding the code and learning more
 
