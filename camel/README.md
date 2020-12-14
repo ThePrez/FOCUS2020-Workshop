@@ -33,7 +33,7 @@ yum install nano
 nano src/main/resources/config.properties
 ```
 You will need to change the following properties:
-- `jt400.dtaq_library` - set to your schema name assigned to you for the workshop
+- `jt400.dtaq_library` - set to your schema name (same as your username)
 - `jt400.username` and `jt400.password` - assigned to you by your workshop coordinator
 - `kafka.topic` - set to your user name
 
