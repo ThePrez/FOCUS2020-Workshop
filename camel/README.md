@@ -20,10 +20,10 @@ yum install maven
 ```
 
 #### 4. Change to the appropriate directory
-For instance, if you're starting inside the `FOCUS2020-Workshop` directory
-(where you cloned the repository for the workshop prerequisites)
+For instance, if you're starting inside your home directory 
+(where you likely cloned the repository for the workshop prerequisites)
 ```
-cd camel/dtaq_to_kafka
+cd FOCUS2020-Workshop/camel/dtaq_to_kafka
 ```
 
 #### 5. Edit the file `src/main/resources/config.properties` with appropriate values
