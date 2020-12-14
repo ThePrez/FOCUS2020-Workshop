@@ -29,8 +29,9 @@ the Camel component documentation at:
 - [Kafka Component](https://camel.apache.org/components/latest/kafka-component.html)
 
 Hints:
+- For the source URI, specify a `jt400:` URI. For the target URI, specify a `kafka:` URI
 - Stream data to an easily-recognizable Kafka topic, like "msg_" followed by your username
-- The Kafka broker's default port is 9092
+- The Kafka broker's default port is 9092 (you probably need to specify the `brokers` option`)
 - Your user profile's message queue is located in the QUSRSYS library (the queue name is the user profile name)
 - use "localhost" for the IBM i system name
 
