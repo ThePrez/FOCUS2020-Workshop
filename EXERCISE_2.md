@@ -32,9 +32,9 @@ Open a **new SSH session** and follow (in a new browser tab) [these steps](camel
 
 #### 5. Trigger database activity!!
 ```
-./delete_customers.py
 ./add_customers.py
 ./update_customers.py
+./delete_customers.py
 ```
 These scripts can be run multiple times to see your pipeline working.
 - `add customers` adds a few customers
