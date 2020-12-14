@@ -60,11 +60,6 @@ public class MainApp {
     }
     public static void main(final String... args) throws Exception {
 
-        // This class simply reads values and creates URIs from the config.properties file.
-        // This is not a standard Camel class, but is part of this example. You can feel free
-        // to just write the URIs instead of using this class.
-        DtaQToKafkaConfig conf = new DtaQToKafkaConfig();
-
         // Standard for a Camel deployment. Start by getting a CamelContext object.
         CamelContext context = new DefaultCamelContext();
         System.out.println("Apache Camel version "+context.getVersion());
