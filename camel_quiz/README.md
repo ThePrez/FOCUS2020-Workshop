@@ -10,10 +10,12 @@ This Quiz assumes you have completed Exercises 1 and 2, and therefore have
 a working Kafka bootstrap server available, a Kafka visualizer available, 
 have OpenJDK and other software installed on IBM i, etc.
 
-#### 1. Set the `JAVA_HOME` environment variable to OpenJDK
+#### 1. Set the `JAVA_HOME` and `PATH` environment variables to OpenJDK
 ```
 JAVA_HOME=/QOpenSys/pkgs/lib/jvm/openjdk-11
 export JAVA_HOME
+PATH=/QOpenSys/pkgs/lib/jvm/openjdk-11/bin:$PATH
+export PATH
 ```
 
 #### 2. Change to the appropriate directory
