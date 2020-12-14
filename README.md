@@ -11,7 +11,6 @@ These steps assume you have an environment set up where you:
 
 Before you begin, your instructor will provide you with:
 - A userid and password (userid must begin with "emlab")
-- A database schema name to use for Exercise 2 (this is likely the same as your userid)
 
 You will also need to clone this workshop into a local directory:
 ```
