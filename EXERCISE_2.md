@@ -15,29 +15,22 @@ These steps assume you have an environment set up where you:
 yum install python3-ibm_db
 ```
 
-#### 2. Set up the LABDB environment variable
-Your instructor will give you a database schema name in the format `EMLAB____`. Set the `LABDB` environment variable, for instance:
-```
-export LABDB=emlab0
-```
-This environment variable will be used by subsequent scripts to operate on your own dedicated schema for this workshop
-
-#### 3. Create test schema
+#### 2. Create test schema (this will be the same schema name as your user ID)
 ```
 ./create_db.py
 ```
 
-#### 4. Set up Camel triggers on your test schema
+#### 3. Set up Camel triggers on your test schema
 ```
 ./create_trigger.py
 ```
 Note that the script will show you the SQL used, for your educational purposes 
 
-#### 5. Build and deploy your camel route
-Refer to [these steps](camel/) (open in a new browser tab and perform steps in a new SSH session) to build and deploy your camel route. 
-**When complete, return here for next steps when your Camel route us running**
+#### 4. Build and deploy your camel route
+Open a **new SSH session** and follow (in a new browser tab) [these steps](camel/) to build and deploy your camel route. 
+**When complete, return here for next steps once your Camel route is running**
 
-#### 6. Trigger database activity!!
+#### 5. Trigger database activity!!
 ```
 ./delete_customers.py
 ./add_customers.py
