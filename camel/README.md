@@ -45,9 +45,7 @@ You will need to change the following properties:
 - `jt400.username` and `jt400.password` - assigned to you by your workshop coordinator
 - `kafka.topic` - set to your user name
 
-You can also opt to remove any properties from this file, and you will be interactively
-prompted for these values. On IBM i, this may require an SSH terminal. Note that the
-`*CURRENT` special value cannot be used with OpenJDK.
+Note that `jt400.hostname` should be left as `localhost`
 
 #### 6. Build and launch
 ```
