@@ -47,6 +47,13 @@ The program will continue running until canceled.
 Test by placing items on the data queue. This is done by triggering database activity 
 (return to workshop steps)
 
+You will know that the program is running and waiting for database activity by seeing output similar to the following:
+```
+[ com.ibm.jesseg.MainApp.main()] AbstractCamelContext           INFO  Total 1 routes, of which 1 are started
+[ com.ibm.jesseg.MainApp.main()] AbstractCamelContext           INFO  Apache Camel 3.4.0 (camel-1) started in 0.598 seconds
+[er-network-thread | producer-1] Metadata                       INFO  [Producer clientId=producer-1] Cluster ID: OOFZVCLZRpS7PY9CTBJcpQ
+```
+
 
 ## Understanding the code and learning more
 
