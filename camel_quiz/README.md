@@ -46,7 +46,7 @@ The program will ask you for URIs, continue running until canceled with <ctrl>+C
 #### 5. Send yourself a message
 Open a new SSH terminal, and run the `send_message` script, with a message of your choice. Observe the message showing up in the Kafka visualizer!
 ```
-./send_msg.py "Hello, World!"
+./send_msg.py 'Hello, World!'
 ```
 Of course, if your URI is incorrect, it may have failed and given you a hopefully-helpful error message, in which case, fall 
 back to step 3 and repeat. 
