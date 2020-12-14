@@ -31,7 +31,7 @@ the Camel component documentation at:
 Hints:
 - Stream data to an easily-recognizable Kafka topic, like "msg_" followed by your username
 - The Kafka broker's default port is 9092
-- Your user profile's message queue is located in the QUSRSYS library
+- Your user profile's message queue is located in the QUSRSYS library (the queue name is the user profile name)
 - use "localhost" for the IBM i system name
 
 
