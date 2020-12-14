@@ -44,9 +44,10 @@ Refer to [these steps](camel/) (open in a new browser tab and perform steps in a
 ./update_customers.py
 ```
 These scripts can be run multiple times to see your pipeline working.
-- `delete_customers.py` deletes all customers from the database
 - `add customers` adds a few customers
 - `update_customers` performs some simple update operations
+- `delete_customers.py` deletes all customers from the database
+
 Each of these, when run in this order, should result in JSON data flowing through the data pipeline to Kafka.
 
 **If all goes well, you should be seeing your transactions flowing in your Camel application and all the way through
