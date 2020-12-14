@@ -21,6 +21,6 @@ cd FOCUS2020-Workshop
 ```
 
 ## Workshop exercises:
-- [Exercise 1: Deploy Kafka](EXERCISE_1.md)
+- [Exercise 1: Deploy Kafka](EXERCISE_1.md) (skip if attending live)
 - [Exercise 2: Create a Db2 Kafka data Pipeline](EXERCISE_2.md)
 - [Exercise 3: (Test)Write your own Camel Routes](camel_quiz/README.md)
