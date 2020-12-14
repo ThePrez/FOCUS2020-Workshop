@@ -77,7 +77,7 @@ docker pull kbhargava/kafka-visuals
 ```
 and run like this (substitute host names and port numbers as appropriate). 
 ```
-docker run -p 9090:9090 --rm kbhargava/kafka-visuals idevphp.idevcloud.com:2181 idevphp.idevcloud.com:9092 DEV
+docker run -p 8080:8080 --rm kbhargava/kafka-visuals idevphp.idevcloud.com:2181 idevphp.idevcloud.com:9092 DEV
 ```
 
 You can opt to use any kafka visualizer you'd like. Kafka even comes with a single-topic visualizer that can run in your SSH terminal, for instance
