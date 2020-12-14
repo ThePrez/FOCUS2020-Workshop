@@ -29,7 +29,8 @@ yum install maven
 ```
 
 #### 4. Change to the appropriate directory
-For instance, if you're starting inside the `FOCUS2020-Workshop` directory where you cloned this repository:
+For instance, if you're starting inside the `FOCUS2020-Workshop` directory
+(where you cloned the repository for the workshop prerequisites)
 ```
 cd camel/dtaq_to_kafka
 ```
