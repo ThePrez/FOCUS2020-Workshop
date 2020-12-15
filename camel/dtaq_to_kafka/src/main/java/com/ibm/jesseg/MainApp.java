@@ -35,6 +35,12 @@ public class MainApp {
                 .to(kafkaUri); 
             }
         });
+        context.addRoutes(new RouteBuilder() {
+            @Override
+            public void configure() {
+                from(kafkaUri).stop(); // cheap way to make sure the topic gets created, for purpose of the workshop
+            }
+        });
 
         // This actually "starts" the route, so Camel will start monitoring and routing activity here.
         context.start();
