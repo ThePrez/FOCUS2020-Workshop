@@ -73,8 +73,7 @@ public class MainApp {
             @Override
             public void configure() {
                 from(fromUri)
-		.convertBodyTo(String.class)
-                .wireTap("log:msgq_to_email?showAll=true&level=INFO") // this is just for debugging data flowing through the route
+                .wireTap("stream:out") // this is just for debugging data flowing through the route
                 .to(toUri); 
             }
         });
