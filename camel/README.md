@@ -46,11 +46,9 @@ mvn compile && mvn exec:java
 The program will continue running until canceled. **Leave this program running until the exercise is completed** 
 
 You will know that the program is running and waiting for database activity by seeing output similar to the following:
-```
-[ com.ibm.jesseg.MainApp.main()] AbstractCamelContext           INFO  Total 1 routes, of which 1 are started
-[ com.ibm.jesseg.MainApp.main()] AbstractCamelContext           INFO  Apache Camel 3.4.0 (camel-1) started in 0.598 seconds
-[er-network-thread | producer-1] Metadata                       INFO  [Producer clientId=producer-1] Cluster ID: OOFZVCLZRpS7PY9CTBJcpQ
-```
+> [ com.ibm.jesseg.MainApp.main()] AbstractCamelContext           INFO  Total 2 routes, of which 2 are started
+Followed by a bunch of other stuff (and the program will be sitting there and waiting for events, without
+returning to your command prompt)
 
 #### 7. Return to workshop steps and triffer database activity
 
