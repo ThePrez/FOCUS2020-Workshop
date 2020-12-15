@@ -74,8 +74,7 @@ public class MainApp {
         context.addRoutes(new RouteBuilder() {
             @Override
             public void configure() {
-                from(toUri)
-                .to("stream:out"); 
+                from(toUri).stop(); //cheap way to pre-create the Kafka topic, also provide early validation to the user if destination URI is invalid 
             }
         });
         context.addRoutes(new RouteBuilder() {
