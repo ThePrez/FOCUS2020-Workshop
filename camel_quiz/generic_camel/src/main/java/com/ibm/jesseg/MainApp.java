@@ -70,16 +70,20 @@ public class MainApp {
         final String toUri = askUser("target URI");
         System.out.printf("\n\n\n\n------------------------------------\n\n\n\nStarting route: <%s>  --->  <%s>\n\n\n\n------------------------------------\n\n\n\n", fromUri, toUri);
         long count = 0L;
+        
+        context.addRoutes(new RouteBuilder() {
+            @Override
+            public void configure() {
+                from(toUri)
+                .to("Stream:out"); 
+            }
+        });
         context.addRoutes(new RouteBuilder() {
             @Override
             public void configure() {
                 from(fromUri)
                 .wireTap("stream:out") // this is just for debugging data flowing through the route
-                .choice()
-                    .when(0 == count++)
-                        .to(toUri, toUri)
-                    .otherwise()
-                        .to(toUri); 
+                .to(toUri); 
             }
         });
 
