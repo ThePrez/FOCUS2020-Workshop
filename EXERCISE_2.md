@@ -14,6 +14,7 @@ These steps assume you have an environment set up where you:
 ```
 yum install python3-ibm_db
 ```
+(note that this will install Python 3 as needed)
 
 #### 2. Create test schema (this will be the same schema name as your user ID)
 ```
