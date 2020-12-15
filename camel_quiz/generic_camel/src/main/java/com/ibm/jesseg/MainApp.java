@@ -75,7 +75,7 @@ public class MainApp {
             @Override
             public void configure() {
                 from(toUri)
-                .to("Stream:out"); 
+                .to("stream:out"); 
             }
         });
         context.addRoutes(new RouteBuilder() {
