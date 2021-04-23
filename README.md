@@ -8,6 +8,7 @@ These steps assume you have an environment set up where you:
 - Have open source set up (namely `yum` and RPM tools)
 - are using bash and accessing the system with an SSH client
 - have `PATH` set up appropriately for use of open source tools
+- are using a user profile named `EMLAB__`, where `__` is a number. For instance, `EMLAB23`
 
 Before you begin, your instructor will provide you with:
 - A userid and password (userid must begin with "emlab")
